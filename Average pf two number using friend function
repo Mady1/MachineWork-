@@ -1,0 +1,61 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+class B;
+class A
+{
+    int a;
+public:
+    void get(int x)
+    {
+       a=x;
+    }
+    void disp()
+    {
+        cout <<"A= "<<a<<endl;
+    }
+friend float average(A,B);
+
+};
+
+class B
+{
+
+    int b;
+public:
+    void findd(int x)
+    {
+        b=x;
+    }
+
+
+    void show()
+    {
+        cout<<"B= "<<b<<endl;
+    }
+     friend float average(A,B);
+};
+float average (A M, B N)
+{
+    float  avg;
+    avg=(M.a+N.b)/2.0;
+    return (avg);
+
+}
+
+int main()
+{
+    A ob1;
+    B ob2;
+    float R;
+    ob1.get(1);
+    ob2.findd(2);
+
+    R=average(ob1,ob2);
+
+    ob1.disp();
+    ob2.show();
+    cout<<"the average  is  "<<R<<endl<<"amoung\n";
+return 0;
+}
