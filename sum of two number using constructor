@@ -1,0 +1,40 @@
+#include<iostream>
+#include<conio.h>
+using namespace std;
+
+class complex
+{
+   public :
+      int r, i;
+ 
+    void get(int a, int b)
+    {
+        complex a, b, c;
+        cout<<"enter a and b"<<endl;
+        cout <<"enter c and d"<<endl;
+    }
+    
+    void disp()
+    {
+        complex a, b, c;
+        cin>>a.r>>endl>>a.i>>endl>>b.r>>endl<<b.i;
+
+    }
+    
+    void call ()
+    {
+        complex a, b,c;
+        c.r=a.r + b.r;
+        c.i=a.i + b.i;
+
+    }
+};
+
+int main()
+{
+    class ob1,ob2,ob3;
+    ob1.get();
+    ob2.disp();
+    ob3.call();
+    return;
+}
