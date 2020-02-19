@@ -1,0 +1,29 @@
+#include <iostream>
+#define pi 3.14
+
+using namespace std;
+
+class circle
+{
+    int radius;
+public:
+    void disp()
+    {
+        float area;
+        cout <<"enter the radius";
+        cin>>radius;
+    }
+    friend float area(circle c);
+
+};
+float area (circle c)
+{
+    return(pi*c.radius*c.radius);
+}
+int main()
+{
+    circle obj;
+    obj.disp();
+    cout<<"area of circle is : "<<area(obj);
+    return 0;
+}
