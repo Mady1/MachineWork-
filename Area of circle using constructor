@@ -1,0 +1,52 @@
+#include <iostream>
+
+using namespace std;
+class circle
+{
+    int r;
+    float ar;
+public:
+   void get(int  a)
+   {
+       r=a;
+   }
+   void disp()
+   {
+       cout<<"Area of circle"<<3.14*r*r;
+
+   }
+
+};
+
+class rectangle : public circle
+{
+    int l, b;
+public:
+    void init(int m, int n)
+    {
+        l=m; b=n;
+
+    }
+    void result ()
+    {
+        cout<<"area of rectangle  "<<l*b;
+
+    }
+};
+int main()
+{
+    int a,c,d;
+    cout << "enter the radius of circle " << endl;
+    cin>>a;
+    rectangle obj;
+    obj.get(a);
+    cout<<"enter the side of rectangle";
+    cin>>c>>d;
+    obj.init(c,d);
+    cout<<"circle \n";
+    obj.disp();
+    cout<<"rectangle\n";
+    obj.result();
+    return 0;
+}
+
