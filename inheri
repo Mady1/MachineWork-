@@ -1,0 +1,87 @@
+#include <iostream>
+
+using namespace std;
+class baseclass
+{
+    char name, gender;
+    int age;
+public:
+    void get()
+    {
+       cout<<endl<<"name"<<endl;
+       cin>>name;
+       cout<<endl<<"gender" <<gender;
+       cin>>gender;
+       cout<<endl<<"age"<<endl;
+    }
+
+       void disp()
+       {
+           cout<<"name entered is:"<<name<<endl;
+           cout <<"the gender is :"<<gender<<endl;
+           cout <<"the age is :"<<age<<endl;
+       }
+
+};
+class devivedclass1:public baseclass
+{
+    char university, level;
+public:
+    void get()
+    {
+        baseclass::get();
+        cout<<"enter the name of the university"<<endl;
+        cin>>university;
+        cout<<"enter the level"<<endl;
+        cin>>level;
+    }
+    void display()
+    {
+        baseclass::disp();
+        cout<<"name of institute is"<<university<<endl;
+        cout<<"level"<<level<<endl;
+    }
+
+};
+class derivedclass2:public baseclass
+{
+    char sport;
+    int classment;
+    void get()
+    {
+        baseclass::get();
+        cout<<"enter the sport"<<endl;
+        cin>>sport;
+        cout<<"enter the level of game "<<endl;
+        cin>>classment;
+    }
+    void disp()
+    {
+        baseclass::disp();
+        cout<<"the sport you entered is :"<<sport<<endl;
+        cout<<"the level of the student is :"<<classment<<endl;
+
+    }
+
+};
+class derivedclass3:public baseclass
+{
+
+};
+int main()
+{
+    derivedclass1 ob1;
+    derivedclass2 ob2;
+    cout<<"Student"<<endl;
+    cout<<"enter data"<<endl;
+    ob1.get();
+
+    cout<<"displaying"<<endl;
+    ob1.display();
+    cout<<"sport"<<endl;
+    cout<<"enter the data"<<endl;
+    ob2.get();
+    cout<<"displaying the information"<<endl;
+    ob2.disp();
+    return 0;
+}
