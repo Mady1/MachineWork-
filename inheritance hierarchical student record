@@ -1,9 +1,10 @@
 #include <iostream>
+#include<stdio.h>
 
 using namespace std;
 class baseclass
 {
-    char name, gender;
+    char name[50], gender[10];
     int age;
 public:
     void get()
@@ -23,9 +24,9 @@ public:
        }
 
 };
-class devivedclass1:public baseclass
+class derivedclass1:public baseclass
 {
-    char university, level;
+    char university[50], level[50];
 public:
     void get()
     {
@@ -35,7 +36,7 @@ public:
         cout<<"enter the level"<<endl;
         cin>>level;
     }
-    void display()
+    void disp()
     {
         baseclass::disp();
         cout<<"name of institute is"<<university<<endl;
@@ -45,8 +46,10 @@ public:
 };
 class derivedclass2:public baseclass
 {
-    char sport;
+    char sport[100];
     int classment;
+public:
+
     void get()
     {
         baseclass::get();
@@ -64,24 +67,24 @@ class derivedclass2:public baseclass
     }
 
 };
-class derivedclass3:public baseclass
-{
 
-};
 int main()
 {
-    derivedclass1 ob1;
+    derivedclass1 ob;
     derivedclass2 ob2;
+
     cout<<"Student"<<endl;
     cout<<"enter data"<<endl;
-    ob1.get();
+    ob.get();
 
     cout<<"displaying"<<endl;
-    ob1.display();
+    ob.disp();
+
     cout<<"sport"<<endl;
     cout<<"enter the data"<<endl;
     ob2.get();
     cout<<"displaying the information"<<endl;
     ob2.disp();
+
     return 0;
 }
