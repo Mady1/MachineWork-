@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+ 
+class A
+{
+    private:
+        int a;
+    protected:
+        int x;  
+    public:
+        void get(int v)
+        {
+            x=v;    
+        }
+};
+ 
+class B:private A
+{
+    public:
+        void print(void)
+        {
+            get(10); //accessing public member function here
+		//protected data member direct access here
+            cout << "value of x: " << x << endl; 
+        }
+};
+ 
+int main()
+{
+        B obj; 
+        obj.print();
+        return 0;
+}
